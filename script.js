@@ -30,14 +30,19 @@ Start your code below 👇
 console.log("Team activity starter code loaded.");
 
 document.addEventListener("DOMContentLoaded", () => {
-  fetch("https://catfact.ninja/fact")
+  fetch("https://yesno.wtf/api")
     .then(response => response.json())
     .then(data => {
-      const factElement = document.getElementById("output");
-      factElement.textContent = data.fact; 
-      //factElement.classList.add("output");
+      const gif = document.createElement("img");
+      gif.src = data.image;
+      gif.alt = data.answer;
+      gif.style.maxWidth = "300px";
+      gif.style.borderRadius = "10px";
+
+      output.appendChild(gif);
     })
     .catch(error => {
       console.error("Error fetching cat fact:", error);
     });
 });
+
