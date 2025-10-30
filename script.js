@@ -33,6 +33,11 @@ document.addEventListener("DOMContentLoaded", () => {
   fetch("https://catfact.ninja/fact")
     .then(response => response.json())
     .then(data => {
-      console.log(data);
+      const factElement = document.getElementById("output");
+      factElement.textContent = data.fact; 
+      //factElement.classList.add("output");
+    })
+    .catch(error => {
+      console.error("Error fetching cat fact:", error);
     });
 });
