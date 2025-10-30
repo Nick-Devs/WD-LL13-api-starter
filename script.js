@@ -28,3 +28,11 @@ Start your code below 👇
 
 // Example placeholder:
 console.log("Team activity starter code loaded.");
+
+document.addEventListener("DOMContentLoaded", () => {
+  fetch("https://catfact.ninja/fact")
+    .then(response => response.json())
+    .then(data => {
+      console.log(data);
+    });
+});
